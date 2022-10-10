@@ -64,6 +64,16 @@
         \coordinate (\name-nearleft)   at (-\x/2,0,0) ;
         \coordinate (\name-nearright)   at (1.5*\x, 0,0) ;
         
+        \coordinate (\name-a) at (0 , \y/2 , \z/2); 
+        \coordinate (\name-b) at (0 ,-\y/2 , \z/2); 
+        \coordinate (\name-c) at (\x    ,-\y/2 , \z/2); 
+        \coordinate (\name-d) at (\x    , \y/2 , \z/2); 
+        \coordinate (\name-e) at (\x    , \y/2 ,-\z/2); 
+        \coordinate (\name-f) at (\x    ,-\y/2 ,-\z/2); 
+        \coordinate (\name-g) at (0 ,-\y/2 ,-\z/2); 
+        \coordinate (\name-h) at (0 , \y/2 ,-\z/2);
+        \coordinate (\name-k) at (0, 0, \z/2);
+        \coordinate (\name-l) at (\x, 0, \z/2);
     },
     /boxblock/.search also={/tikz},
     /boxblock/.cd,
@@ -74,92 +84,6 @@
     ylabel/.store       in=\ylabel,
     zlabel/.store       in=\zlabel,
     caption/.store      in=\caption,
-    name/.store         in=\name,
-    fill/.store         in=\fill,
-    opacity/.store      in=\opacity,
-    scriptscale/.store  in=\scriptscale,
-    border/.store       in=\border,
-    border=1,
-    opacity=1,
-    scriptscale=1,
-    width=3,
-    height=6,
-    depth=3,
-    xlabel=,
-    ylabel=,
-    zlabel=,
-    caption=,
-    name=none,
-}
-
-\tikzset{BaseBox/.pic={\tikzset{/boxblock/.cd,#1}
-        \tikzstyle{box}=[every edge/.append style={pic actions, densely dashed, opacity=1},draw=\border, fill opacity=\opacity, pic actions,fill=\fill]
-        \tikzset{every node/.append style={scale=\scriptscale}}
-        
-        \xdef\y{\cubey}
-        \xdef\z{\cubez}
-        \xdef\x{\cubex}
-   
-        \coordinate (a) at (0 , \y/2 , \z/2); 
-        \coordinate (b) at (0 ,-\y/2 , \z/2); 
-        \coordinate (c) at (\x    ,-\y/2 , \z/2); 
-        \coordinate (d) at (\x    , \y/2 , \z/2); 
-        \coordinate (e) at (\x    , \y/2 ,-\z/2); 
-        \coordinate (f) at (\x    ,-\y/2 ,-\z/2); 
-        \coordinate (g) at (0 ,-\y/2 ,-\z/2); 
-        \coordinate (h) at (0 , \y/2 ,-\z/2);
-        \coordinate (k) at (0, 0, \z/2);
-        \coordinate (l) at (\x, 0, \z/2);
-         			
-        \draw [box] 
-            %dotted edges
-            (f) edge (g)
-            (b) edge (g)
-            (h) edge (g)    
-        ;     	
-        
-        % }%Loop ends
-        \draw [box] (d) -- (e) -- (f) -- (c) -- cycle
-                    (d) -- (a) -- (b) -- (c) -- cycle     
-                    (d) -- (a) -- (h) -- (e) -- cycle;
-        \draw [box, fill=black, draw=none, fill opacity=0.06]
-            (d) -- (c) -- (f) -- (e) -- cycle;
-        \draw [box, fill=white, draw=none, fill opacity=0.06]
-            (d) -- (a) -- (h) -- (e) -- cycle;
-        \draw [box] (c) -- (f) node [below, midway, sloped] {\zlabel}; %depth label
-        \path (b) edge ["\ylabel", midway, draw=\border] (a);  %height label
-        \draw [fill opacity=\opacity, draw=\border] (b) -- (c)  node [below, midway, fill opacity=1] {\xlabel};
-        \node at (\x/2, 0, \z/2) {\facelabel};
-        
-        %\node at (a) {a};
-        %\node at (b) {b};
-        %\node at (c) {c};
-        %\node at (d) {d};
-        %\node at (e) {e};
-        %\node at (f) {f};
-        %\node at (g) {g};
-        %\node at (h) {h};
-        
-        %Define nodes to be used outside on the pic object
-        \coordinate (\name-left)   at (0,0,0) ;
-        \coordinate (\name-right)   at (\x, 0,0) ;
-        \coordinate (\name-face)  at (\x/2,0,\z/2);
-        \coordinate (\name-back)  at (\x/2,0,-\z/2);       
-        \coordinate (\name-head) at (\x/2,\y/2,0);
-        \coordinate (\name-bottom)  at (\x/2,-\y/2,0); 
-        \coordinate (\name-nearleft)   at (-\x/2,0,0) ;
-        \coordinate (\name-nearright)   at (1.5*\x, 0,0) ;
-        
-    },
-    /boxblock/.search also={/tikz},
-    /boxblock/.cd,
-    width/.store        in=\cubex,
-    height/.store       in=\cubey,
-    depth/.store        in=\cubez,
-    xlabel/.store       in=\xlabel,
-    ylabel/.store       in=\ylabel,
-    zlabel/.store       in=\zlabel,
-    facelabel/.store    in=\facelabel,
     name/.store         in=\name,
     fill/.store         in=\fill,
     opacity/.store      in=\opacity,
@@ -281,9 +205,7 @@
    
         \coordinate (a) at (0 , \y/2 , \z/2); 
         \coordinate (b) at (0 ,-\y/2 , \z/2); 
-        \coordinate (ab) at (0 , 0 , \z/2); 
         \coordinate (c) at (\x    ,-\y/2 , \z/2); 
-        \coordinate (bc) at (\x , 0 , \z/2); 
         \coordinate (d) at (\x    , \y/2 , \z/2); 
         \coordinate (e) at (\x    , \y/2 ,-\z/2); 
         \coordinate (f) at (\x    ,-\y/2 ,-\z/2); 
@@ -335,10 +257,8 @@
             
         \draw [box] (c) -- (f) node [below, midway, sloped] {\zlabel}; %depth label
         \path (b) edge ["\ylabel", midway, draw=\border] (a);  %height label
-        \path (ab) edge ["\facelabel", midway, draw=\border] (bc);  %height label
         \draw [box] (b) -- (c)  node [below, midway] {\xlabel};
         \node [rotate=-90] at (\x/2, 0, \z/2) {\caption};
-
         
         \draw [box] (2c) -- (2f) node [below, midway, sloped] {\zzlabel}; %depth label
         \path (2b) edge ["\yylabel", midway, draw=\border] (2a);  %height label
@@ -367,7 +287,6 @@
     xlabel/.store       in=\xlabel,
     ylabel/.store       in=\ylabel,
     zlabel/.store       in=\zlabel,
-    facelabel/.store    in=\facelabel,
     caption/.store      in=\caption,
     name/.store         in=\name,
     fill/.store         in=\fill,
