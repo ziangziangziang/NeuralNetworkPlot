@@ -65,6 +65,8 @@ A list of anchor would be generated to present the relative coordinate with resp
         }
     };
 ```
+The anchors are:
+```
         \coordinate (\name-left)   at (0,0,0) ;
         \coordinate (\name-right)   at (\x, 0,0) ;
         \coordinate (\name-face)  at (\x/2,0,\z/2);
