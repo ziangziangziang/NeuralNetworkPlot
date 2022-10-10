@@ -1,0 +1,334 @@
+\documentclass[border=8pt, multi, tikz]{standalone} 
+\usetikzlibrary{quotes,arrows,positioning,3d, calc}
+\usepackage{xcolor}
+\definecolor{salmon}{RGB}{250, 128, 114} % custom color
+\definecolor{lightpink}{RGB}{255, 182, 193}
+\definecolor{PALEGOLDENROD}{RGB}{238, 232, 170}
+\definecolor{lightsalmon}{RGB}{255, 160, 122}
+\definecolor{nephritis}{RGB}{39, 174, 96}
+\definecolor{peru}{RGB}{205, 133, 63}
+\definecolor{chocolate}{RGB}{210, 105, 30}
+\definecolor{lightblue}{RGB}{174, 214, 241}
+\definecolor{lightyellow}{RGB}{218, 247, 166}
+
+\usepackage{layer/Arrow}
+\usepackage{layer/Box}
+\usepackage{layer/Ball}
+
+
+\begin{document}
+
+\begin{tikzpicture}
+    \pic[] at (0, 0, 0)
+    {BaseBox={
+        name=insulator,
+        opacity=0.5,
+        facelabel=\small{Insulator},
+        fill=lightblue,
+        width=10,
+        height=1,
+        depth=10,
+        border=lightblue,
+        }
+    };
+
+    \pic[shift={(3, 0.1,-4)}] at (insulator-head)
+    {BaseBox={
+        name=pad,
+        opacity=0.5,
+        facelabel=\small{},
+        fill=lightyellow,
+        width=2,
+        height=0.2,
+        depth=2,
+        border=lightyellow,
+        }
+    };
+    \pic[shift={(-0.25, 0.9, 0)}] at (pad-head)
+    {BaseBox={
+        name=pale,
+        opacity=0.5,
+        facelabel=\small{},
+        fill=green,
+        width=0.5,
+        height=1.8,
+        depth=0.5,
+        border=green,
+        }
+    };
+    \pic[shift={(-5, 0.1,-4)}] at (insulator-head)
+    {BaseBox={
+        name=pad,
+        opacity=0.5,
+        facelabel=\small{},
+        fill=lightyellow,
+        width=2,
+        height=0.2,
+        depth=2,
+        border=lightyellow,
+        }
+    };
+    \pic[shift={(-0.25, 0.9, 0)}] at (pad-head)
+    {BaseBox={
+        name=pale,
+        opacity=0.5,
+        facelabel=\small{},
+        fill=red,
+        width=0.5,
+        height=1.8,
+        depth=0.5,
+        border=red,
+        }
+    };
+
+    \pic[shift={(3, 0.1,0)}] at (insulator-head)
+    {BaseBox={
+        name=pad,
+        opacity=0.5,
+        facelabel=\small{},
+        fill=lightyellow,
+        width=2,
+        height=0.2,
+        depth=2,
+        border=lightyellow,
+        }
+    };
+    \pic[shift={(-0.25, 0.9, 0)}] at (pad-head)
+    {BaseBox={
+        name=pale,
+        opacity=0.5,
+        facelabel=\small{},
+        fill=green,
+        width=0.5,
+        height=1.8,
+        depth=0.5,
+        border=green,
+        }
+    };
+    \pic[shift={(-5, 0.1,0)}] at (insulator-head)
+    {BaseBox={
+        name=pad,
+        opacity=0.5,
+        facelabel=\small{},
+        fill=lightyellow,
+        width=2,
+        height=0.2,
+        depth=2,
+        border=lightyellow,
+        }
+    };
+    \pic[shift={(-0.25, 0.9, 0)}] at (pad-head)
+    {BaseBox={
+        name=pale,
+        opacity=0.5,
+        facelabel=\small{},
+        fill=red,
+        width=0.5,
+        height=1.8,
+        depth=0.5,
+        border=red,
+        }
+    };
+    \pic[shift={(-2, 0.1,-4)}] at (insulator-head)
+    {BaseBox={
+        name=pad,
+        opacity=0.5,
+        facelabel=\small{},
+        fill=lightyellow,
+        width=4,
+        height=0.2,
+        depth=2,
+        border=lightyellow,
+        }
+    };
+
+    \pic[shift={(-1.25, 0.9, 0)}] at (pad-head)
+    {BaseBox={
+        name=pale,
+        opacity=0.5,
+        facelabel=\small{},
+        fill=green,
+        width=0.5,
+        height=1.8,
+        depth=0.5,
+        border=green,
+        }
+    };
+    \pic[shift={(0.75, 0.9, 0)}] at (pad-head)
+    {BaseBox={
+        name=pale,
+        opacity=0.5,
+        facelabel=\small{},
+        fill=red,
+        width=0.5,
+        height=1.8,
+        depth=0.5,
+        border=red,
+        }
+    };
+    \pic[shift={(-2, 0.1, 0)}] at (insulator-head)
+    {BaseBox={
+        name=pad,
+        opacity=0.5,
+        facelabel=\small{},
+        fill=lightyellow,
+        width=4,
+        height=0.2,
+        depth=2,
+        border=lightyellow,
+        }
+    };
+    \pic[shift={(-1.25, 0.9, 0)}] at (pad-head)
+    {BaseBox={
+        name=pale,
+        opacity=0.5,
+        facelabel=\small{},
+        fill=green,
+        width=0.5,
+        height=1.8,
+        depth=0.5,
+        border=green,
+        }
+    };
+    \pic[shift={(0.75, 0.9, 0)}] at (pad-head)
+    {BaseBox={
+        name=pale,
+        opacity=0.5,
+        facelabel=\small{},
+        fill=red,
+        width=0.5,
+        height=1.8,
+        depth=0.5,
+        border=red,
+        }
+    };
+
+
+    \pic[shift={(3, 0.1,4)}] at (insulator-head)
+    {BaseBox={
+        name=pad,
+        opacity=0.5,
+        facelabel=\small{},
+        fill=lightyellow,
+        width=2,
+        height=0.2,
+        depth=2,
+        border=lightyellow,
+        }
+    };
+    \pic[shift={(-0.25, 0.9, 0)}] at (pad-head)
+    {BaseBox={
+        name=pale,
+        opacity=0.5,
+        facelabel=\small{},
+        fill=green,
+        width=0.5,
+        height=1.8,
+        depth=0.5,
+        border=green,
+        }
+    };
+    \pic[shift={(-5, 0.1,4)}] at (insulator-head)
+    {BaseBox={
+        name=pad,
+        opacity=0.5,
+        facelabel=\small{},
+        fill=lightyellow,
+        width=2,
+        height=0.2,
+        depth=2,
+        border=lightyellow,
+        }
+    };
+    \pic[shift={(-0.25, 0.9, 0)}] at (pad-head)
+    {BaseBox={
+        name=pale,
+        opacity=0.5,
+        facelabel=\small{},
+        fill=red,
+        width=0.5,
+        height=1.8,
+        depth=0.5,
+        border=red,
+        }
+    };
+    \pic[shift={(-2, 0.1,4)}] at (insulator-head)
+    {BaseBox={
+        name=pad,
+        opacity=0.5,
+        facelabel=\small{},
+        fill=lightyellow,
+        width=4,
+        height=0.2,
+        depth=2,
+        border=lightyellow,
+        }
+    };
+    \pic[shift={(-1.25, 0.9, 0)}] at (pad-head)
+    {BaseBox={
+        name=pale,
+        opacity=0.5,
+        facelabel=\small{},
+        fill=green,
+        width=0.5,
+        height=1.8,
+        depth=0.5,
+        border=green,
+        }
+    };
+    \pic[shift={(0.75, 0.9, 0)}] at (pad-head)
+    {BaseBox={
+        name=pale,
+        opacity=0.5,
+        facelabel=\small{},
+        fill=red,
+        width=0.5,
+        height=1.8,
+        depth=0.5,
+        border=red,
+        }
+    };
+    \pic[shift={(-5, 2.4,0)}] at (insulator-head)
+    {BaseBox={
+        name=insulator2,
+        opacity=0.7,
+        facelabel=\small{Insulator},
+        fill=lightblue,
+        width=10,
+        height=0.8,
+        depth=10,
+        border=lightblue,
+        }
+    };
+
+
+    \pic[shift={(-5, 0.2,0)}] at (insulator2-head)
+    {BaseBox={
+        name=absorber,
+        opacity=0.5,
+        facelabel=\small{Solar Selective Absorber},
+        fill=chocolate,
+        width=10,
+        height=0.4,
+        depth=10,
+        border=chocolate,
+        }
+    };
+
+    \pic[shift={(-5, 0.5,0)}] at (absorber-head)
+    {BaseBox={
+        name=absorber,
+        opacity=0.5,
+        facelabel=\small{Solar Cell},
+        fill=lightpink,
+        width=10,
+        height=1,
+        depth=10,
+        border=lightpink,
+        }
+    };
+\end{tikzpicture}
+\end{document}
+
+
+
